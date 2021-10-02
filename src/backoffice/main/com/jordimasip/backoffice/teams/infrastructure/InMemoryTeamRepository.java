@@ -14,7 +14,7 @@ public class InMemoryTeamRepository implements TeamRepository {
 
     @Override
     public void save(Team team) {
-        teams.put(team.id(), team);
+        teams.put(team.id().value(), team);
     }
 
 }

@@ -1,22 +1,24 @@
 package com.jordimasip.backoffice.teams.domain;
 
+
 import java.util.Objects;
 
 public class Team {
 
-    private final String id;
-    private final String name;
+    private final TeamId id;
 
-    public Team(String id, String name) {
+    private final TeamName name;
+
+    public Team(TeamId id, TeamName name) {
         this.id = id;
         this.name = name;
     }
 
-    public String id() {
+    public TeamId id() {
         return id;
     }
 
-    public String name() {
+    public TeamName name() {
         return name;
     }
 
@@ -32,4 +34,5 @@ public class Team {
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
 }
