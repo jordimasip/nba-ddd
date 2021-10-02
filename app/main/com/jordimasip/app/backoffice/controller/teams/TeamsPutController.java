@@ -1,5 +1,6 @@
 package com.jordimasip.app.backoffice.controller.teams;
 
+import com.jordimasip.backoffice.teams.application.create.CreateTeamRequest;
 import com.jordimasip.backoffice.teams.application.create.TeamCreator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +16,11 @@ public class TeamsPutController {
     }
 
     @PutMapping(value = "/teams/{id}")
-    public ResponseEntity create(
+    public ResponseEntity<String> create(
         @PathVariable String id,
         @RequestBody Request request
     ){
-        creator.create(id, request.name());
+        creator.create(new CreateTeamRequest(id, request.name()));
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

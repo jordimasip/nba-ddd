@@ -7,14 +7,14 @@ import com.jordimasip.shared.domain.Service;
 @Service
 final public class TeamCreator {
 
-    private TeamRepository repository;
+    private final TeamRepository repository;
 
     public TeamCreator(TeamRepository repository) {
         this.repository = repository;
     }
 
-    public void create(String id, String name) {
-        Team team = new Team(id, name);
+    public void create(CreateTeamRequest request) {
+        Team team = new Team(request.id(), request.name());
 
         repository.save(team);
     }

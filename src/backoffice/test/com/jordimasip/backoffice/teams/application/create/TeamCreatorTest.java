@@ -15,7 +15,7 @@ final class TeamCreatorTest {
 
         Team team = new Team("some-id", "some-name");
 
-        creator.create(team.id(), team.name());
+        creator.create(new CreateTeamRequest(team.id(), team.name()));
 
         verify(repository, atLeastOnce()).save(team);
     }
