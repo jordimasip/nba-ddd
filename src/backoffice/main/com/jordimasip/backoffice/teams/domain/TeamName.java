@@ -6,4 +6,8 @@ public class TeamName extends StringValueObject {
     public TeamName(String value) {
         super(value);
     }
+
+    private TeamName() {
+        super("");
+    }
 }
